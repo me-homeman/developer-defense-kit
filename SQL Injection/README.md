@@ -99,6 +99,45 @@ with SafeDBWrapper(DB_FILE) as db:
     if mouse:
         print(f"\nFound product: {dict(mouse)}")
 ```
+## C and C++ Implementations                                                 
+                                                                             
+To further demonstrate SQL injection prevention in other languages, equ      
+ ivalent implementations are provided in C and C++. These versions utili      
+ ze the SQLite3 C API directly to showcase parameterized queries as the       
+ primary defense mechanism.                                                   
+                                                                              
+ ### C Version (`sql_injection.c`)                                            
+                                                                              
+ This C implementation mirrors the Python script's logic, demonstrating       
+ database setup, safe data fetching, and the prevention of SQL injection      
+  attempts.                                                                   
+                                                                              
+ **Compilation:**                                                             
+ ```bash                                                                      
+ gcc sql_injection.c -o sql_injection_c_app -lsqlite3                         
+ ```                                                                          
+                                                                              
+ **Execution:**                                                               
+ ```bash                                                                      
+ ./sql_injection_c_app                                                        
+ ```                                                                          
+                                                                              
+ ### C++ Version (`sql_injection.cpp`)                                        
+                                                                              
+ The C++ version also follows the same principles but uses C++ features       
+ like RAII (Resource Acquisition Is Initialization) wrappers for SQLite       
+ connections and statements, and exceptions for error handling, making t      
+ he code more idiomatic C++.                                                  
+                                                                              
+ **Compilation:**                                                             
+ ```bash                                                                      
+ g++ sql_injection.cpp -o sql_injection_cpp_app -lsqlite3                     
+ ```                                                                          
+                                                                              
+ **Execution:**                                                               
+ ```bash                                                                      
+ ./sql_injection_cpp_app                                                      
+ ```                                                                          
 
 ## Adaptability
 
